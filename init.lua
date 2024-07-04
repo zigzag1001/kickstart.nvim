@@ -171,7 +171,7 @@ vim.opt.rtp:prepend(lazypath)
 --
 -- NOTE: Here is where you install your plugins.
 require('lazy').setup({
-  -- MY STUFFFFFFFFFFFFFFF
+  -- MY STUFFFFFFFFFFFFFFF PLUGINSS
   {
     'zbirenbaum/copilot.lua',
     opts = { suggestion = { suggestion = { enable = false }, panel = { enable = false } }, filetypes = {
@@ -206,6 +206,11 @@ require('lazy').setup({
         })
       )
     end,
+  },
+  {
+    'akinsho/bufferline.nvim',
+    event = 'VimEnter',
+    opts = {},
   },
 
   -- KICKSTART STUFFFFF
@@ -667,12 +672,12 @@ require('lazy').setup({
           -- `friendly-snippets` contains a variety of premade snippets.
           --    See the README about individual language/framework/plugin snippets:
           --    https://github.com/rafamadriz/friendly-snippets
-          -- {
-          --   'rafamadriz/friendly-snippets',
-          --   config = function()
-          --     require('luasnip.loaders.from_vscode').lazy_load()
-          --   end,
-          -- },
+          {
+            'rafamadriz/friendly-snippets',
+            config = function()
+              require('luasnip.loaders.from_vscode').lazy_load()
+            end,
+          },
         },
       },
       'saadparwaiz1/cmp_luasnip',
@@ -752,10 +757,10 @@ require('lazy').setup({
         },
         sources = {
           { name = 'copilot' },
+          { name = 'luasnip' },
           { name = 'nvim_lsp' },
           { name = 'buffer' },
           { name = 'path' },
-          { name = 'luasnip' },
         },
         window = {
           completion = cmp.config.window.bordered(),
