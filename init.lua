@@ -212,6 +212,14 @@ require('lazy').setup({
     event = 'VimEnter',
     opts = {},
   },
+  {
+    'ggandor/leap.nvim',
+    opts = {},
+    config = function()
+      require('leap').create_default_mappings()
+      require('leap').init_highlight(true)
+    end,
+  },
 
   -- KICKSTART STUFFFFF
 
@@ -807,7 +815,7 @@ require('lazy').setup({
       -- - saiw) - [S]urround [A]dd [I]nner [W]ord [)]Paren
       -- - sd'   - [S]urround [D]elete [']quotes
       -- - sr)'  - [S]urround [R]eplace [)] [']
-      require('mini.surround').setup()
+      -- require('mini.surround').setup()
 
       -- animate
       require('mini.animate').setup()
