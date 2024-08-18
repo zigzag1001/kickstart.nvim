@@ -28,6 +28,10 @@ vim.keymap.set('i', 'jk', '<esc>', { noremap = true })
 vim.keymap.set('i', 'kj', '<esc>', { noremap = true })
 vim.cmd 'autocmd BufReadPost * if line("\'\\"") > 0 && line("\'\\"") <= line("$") | exe "normal! g\'\\"" | endif'
 
+vim.api.nvim_create_autocmd('InsertEnter', { command = [[set norelativenumber]] })
+
+vim.api.nvim_create_autocmd('InsertLeave', { command = [[set relativenumber]] })
+
 -- KICKSTART STUFFFF
 
 -- Set <space> as the leader key
