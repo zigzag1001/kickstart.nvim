@@ -28,6 +28,13 @@ vim.keymap.set('i', 'jk', '<esc>', { noremap = true })
 vim.keymap.set('i', 'kj', '<esc>', { noremap = true })
 vim.cmd 'autocmd BufReadPost * if line("\'\\"") > 0 && line("\'\\"") <= line("$") | exe "normal! g\'\\"" | endif'
 
+vim.keymap.set('n', '<ScrollWheelDown>', '<C-D>', { noremap = true })
+vim.keymap.set('n', '<ScrollWheelUp>', '<C-U>', { noremap = true })
+vim.keymap.set('v', '<ScrollWheelDown>', '<C-D>', { noremap = true })
+vim.keymap.set('v', '<ScrollWheelUp>', '<C-U>', { noremap = true })
+vim.keymap.set('i', '<ScrollWheelDown>', '<Esc><C-D>', { noremap = true })
+vim.keymap.set('i', '<ScrollWheelUp>', '<Esc><C-U>', { noremap = true })
+
 vim.api.nvim_create_autocmd('InsertEnter', { command = [[set norelativenumber]] })
 
 vim.api.nvim_create_autocmd('InsertLeave', { command = [[set relativenumber]] })
@@ -254,6 +261,10 @@ require('lazy').setup({
         desc = 'GitGraph - Draw',
       },
     },
+  },
+  {
+    'sphamba/smear-cursor.nvim',
+    opts = {},
   },
 
   -- KICKSTART STUFFFFF
